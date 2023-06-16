@@ -12,6 +12,9 @@ from flaskbb.utils.helpers import (
     slugify,
     time_utcnow,
     topic_is_unread,
+    to_bytes,
+    to_unicode,
+    redirect_url   
 )
 from flaskbb.utils.settings import flaskbb_config
 
@@ -24,6 +27,21 @@ from flaskbb.utils.settings import flaskbb_config
 # NOTE: You'll need to import them from flaskbb.utils.helpers
 
 # ADD CODE HERE
+def test_to_unicode_and_back(capfd):
+    """Test the unicode conversion code"""
+    print('--------------------->>>>>>>>>>')
+    assert to_unicode(to_bytes(u"¿Cómo está?")) == u"¿Cómo está?"
+
+
+def test_redirect_url_with_endpoint():
+    assert redirect_url("next_page",use_referrer=False) == "next_page"
+
+def test_redirect_url_to_unsafe_site():
+    assert redirect_url("http://www.example.com", use_referrer=False) == None
+
+def test_redirect_url_with_referrer(application):
+    with application.test_request_context("/redirect"):
+        assert redirect_url("next_page",use_referrer=True) == "next_page"
 
 ###################################################################
 
