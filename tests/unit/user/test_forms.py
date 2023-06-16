@@ -134,7 +134,7 @@ class TestChangeUserDetailsForm(object):
         data = MultiDict(
             dict(
                 submit=True,
-                birthday="25 06 2000",
+                birthday="2000-06-25",
                 gender="awesome",
                 location="here",
                 website="http://flaskbb.org",
@@ -175,7 +175,7 @@ class TestChangeUserDetailsForm(object):
         # CoRise TODO: fix this this test so that it passes.
         data = dict(
             submit=True,
-            birthday="25 06 2000",
+            birthday="2000-06-25",
             gender="awesome",
             location="here",
             website="http://flaskbb.org",
