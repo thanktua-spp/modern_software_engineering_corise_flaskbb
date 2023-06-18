@@ -52,8 +52,8 @@ jobs: # Actions
         python -m pip install --upgrade pip
         pip install wheel
         pip install pytest-playwright --upgrade
-        python -m playwright install
-        python -m playwrite install-deps
+        # python -m playwright install
+        # python -m playwright install-deps
         pip install -r requirements-dev.txt
         pip install -e .
 
