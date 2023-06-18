@@ -105,6 +105,20 @@ class TopicForm(FlaskForm):
         return topic.save(user=user, forum=forum)
 
 
+###################################################################
+# CoRise TODO: create the SpecialTopicForm class below
+# Hint: TopicForm objects have `title` and `content` attributes. Can
+# you modify them?
+
+class SpecialTopicForm(TopicForm):
+    # ADD CODE HERE
+    def __init__(self, *args, **kwargs):
+       TopicForm.__init__(self, *args, **kwargs)
+       self.title.process_data(f'Special Topic: {self.title.data}')
+       self.content.process_data(f'Special Topic: {self.content.data}')
+
+###################################################################
+
 class NewTopicForm(TopicForm):
     pass
 
