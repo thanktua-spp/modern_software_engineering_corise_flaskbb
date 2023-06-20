@@ -76,6 +76,6 @@ jobs: # Actions
       uses: actions/upload-artifact@v3
       with:
         name: code coverage report
-        path: ./htmlcov/
+        path: test/htmlcov/
       
 ###################################################################
