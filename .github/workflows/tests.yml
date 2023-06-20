@@ -17,8 +17,8 @@ on: # event
 
 ###################################################################
 # CoRise TODO: fill in the steps to install dependencies, run tests 
-# with pytest, and upload the code coverage report.
-
+# with pytest, and upload the code coverage report. 
+ 
 jobs: # Actions
   build:
 
