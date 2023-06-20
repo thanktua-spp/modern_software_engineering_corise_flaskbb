@@ -17,9 +17,9 @@ on: # event
 
 ###################################################################
 # CoRise TODO: fill in the steps to install dependencies, run tests 
-# with pytest, and upload the code coverage report.
-
-jobs: # Actions
+# with pytest, and upload the code coverage report. 
+ 
+jobs: # actions
   build:
 
     runs-on: ubuntu-latest
@@ -76,6 +76,6 @@ jobs: # Actions
       uses: actions/upload-artifact@v3
       with:
         name: code coverage report
-        path: ./htmlcov/
+        path: flaskbb/tests/htmlcov/
       
 ###################################################################
